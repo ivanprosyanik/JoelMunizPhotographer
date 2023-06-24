@@ -1,0 +1,44 @@
+.hero {
+  &__wrapper {
+    background-image: url(../img/hero-decor.svg);
+    background-position: top right 20%;
+    background-size: 523px;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+    margin-bottom: 33px;
+    max-width: 348px;
+
+    span {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  }
+
+  &__btn {
+    padding: 20px 51px;
+    border: 1px solid $c-black;
+  }
+
+  &__images {
+
+
+    &-box {
+      max-width: 100%;
+      object-fit: cover;
+      min-height: 402px;
+      background-position: top center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      &--bottom {
+        min-height: 597px;
+        background-position: bottom center;
+      }
+    }
+  }
+}

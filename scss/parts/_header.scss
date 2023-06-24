@@ -1,0 +1,17 @@
+.header {
+  padding-top: 53px;
+  margin-bottom: 85px;
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 55px;
+    }
+  }
+
+  &__location {
+    letter-spacing: initial;
+  }
+}
