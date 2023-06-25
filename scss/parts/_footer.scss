@@ -3,5 +3,17 @@
 
   &__wrapper {
     align-items: center;
+
+    @include r($tablet-2) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include r($phone) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+    }
   }
 }

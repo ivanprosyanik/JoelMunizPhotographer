@@ -21,3 +21,22 @@ tabsBtn.forEach((btn, index) => {
     })
   });
 });
+
+const burger = document.querySelector('.burger');
+const headerList = document.querySelector('.header__list');
+const body = document.querySelector('.body')
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('burger--active');
+  headerList.classList.toggle('active');
+  body.classList.toggle('lock');
+});
+
+document.addEventListener('click', function (e) {
+  if (e.target !== burger && e.target !== headerList && e.target) {
+    body.classList.remove('lock');
+    headerList.classList.remove('active');
+    burger.classList.remove('burger--active');
+  };
+});
+

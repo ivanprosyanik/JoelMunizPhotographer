@@ -16,17 +16,20 @@
   <title>Joel Muniz, Proffesional photographer</title>
 </head>
 
-<body>
+<body class="body">
   <div class="wrapper">
     <header class="header">
       <div class="container">
         <nav class="header__nav grid-wrapper">
-          <div class="header__logo">
-            <a class="header__logo-link" href="#">
-              <img class="header__logo-img" src="img/logo.svg" alt="Logotype">
+          <div class="header__logo logo">
+            <a class="header__logo-link logo__link" href="#">
+              <img class="logo-img" src="img/logo.svg" alt="Logotype">
             </a>
           </div>
-
+          <button class="burger" type="button">
+            <span class="burger__line"></span>
+            <span class="sr-only">Открыть меню</span>
+          </button>
           <ul class="header__list">
             <li class="header__item">
               <a class="header__link" href="#">Home</a>
@@ -58,14 +61,16 @@
                   Professional headshots are a type of portrait photography typically used for websites, press releases,
                   publications, and
                   social-media profiles
-                  Make a statement with portrait photography <br>
+                  Make a statement with portrait photography
                   in Latvia
                 </p>
               </div>
               <a class="hero__btn btn" href="#">Contact me</a>
             </div>
-            <div class="hero__images-box" style="background-image: url(img/hero-img-1.jpg);"></div>
-            <div class="hero__images-box hero__images-box--bottom" style="background-image: url(img/hero-img-2.jpg);">
+            <div class="hero__images">
+              <div class="hero__images-box" style="background-image: url(img/hero-img-1.jpg);"></div>
+              <div class="hero__images-box hero__images-box--bottom" style="background-image: url(img/hero-img-2.jpg);">
+              </div>
             </div>
           </div>
         </div>
@@ -206,8 +211,8 @@
     <footer class="footer section-offset">
       <div class="container">
         <div class="footer__wrapper grid-wrapper">
-          <a class="header__logo" href="#">
-            <img class="header__logo-img" src="img/logo.svg" alt="Logotype">
+          <a class="header__logo logo__link" href="#">
+            <img class="logo-img" src="img/logo.svg" alt="Logotype">
           </a>
           <p class="footer__copy">
             2034 © Все права защищены

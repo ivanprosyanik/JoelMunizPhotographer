@@ -4,11 +4,25 @@
     background-position: top right 20%;
     background-size: 523px;
     background-repeat: no-repeat;
+
+    @include r($tablet-2) {
+      background-size: 277px;
+    }
+
+    @include r($tablet) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__text {
     margin-bottom: 33px;
     max-width: 348px;
+
+    @include r($tablet-2) {
+      max-width: 273px;
+      margin-bottom: 49px;
+    }
 
     span {
       display: block;
@@ -22,23 +36,42 @@
   &__btn {
     padding: 20px 51px;
     border: 1px solid $c-black;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+
+    &:hover {
+      background-color: $c-black;
+      color: $c-white;
+    }
   }
 
   &__images {
-
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
 
     &-box {
       max-width: 100%;
-      object-fit: cover;
+      width: 100%;
       min-height: 402px;
-      background-position: top center;
+      background-position: left top;
       background-size: contain;
       background-repeat: no-repeat;
 
       &--bottom {
         min-height: 597px;
-        background-position: bottom center;
+        background-position: bottom right;
+
+        @include r($tablet-2) {
+          background-position: center top 101px;
+          min-height: 0;
+        }
       }
+    }
+
+    @include r($tablet) {
+      order: -1;
+      height: 292px;
     }
   }
 }

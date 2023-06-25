@@ -5,6 +5,12 @@
 
   &__tabs {
     margin-bottom: 70px;
+
+    @include r($tablet) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
   &__subtitle {
@@ -60,6 +66,12 @@
     padding-top: 30px;
     border-top: 1px solid $c-black;
     counter-reset: counter;
+
+    @include r($tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      border: 0;
+    }
   }
 
   &__item {
@@ -111,6 +123,17 @@
         background-repeat: no-repeat;
         background-size: 19px 14px;
         background-position: center;
+      }
+    }
+    @include r($tablet) {
+      &:not(:last-child) {
+        margin-bottom: 100px;
+      }
+
+      &:last-child{
+        &::after {
+          content: none;
+        }
       }
     }
   }

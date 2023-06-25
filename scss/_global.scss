@@ -29,10 +29,14 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
+
+  @include r($tablet-2) {
+    grid-column-gap: 9px;
+  }
 }
 
 .section-offset {
-  margin-bottom: 130px;
+  margin-bottom: size(130, 100);
 }
 
 .title {
@@ -42,12 +46,26 @@ body {
   &.main__title {
     font-size: 50px;
     font-weight: 700;
-    margin-bottom: 60px;
+    margin-bottom: size(60, 25);
+
+    @include r($tablet-2) {
+      font-size: size(50, 40);
+    }
   }
 
   &.workflow__subtitle,
   &.contacts__title {
     font-size: 30px;
+  }
+}
+
+.logo__link {
+  width: fit-content;
+  padding: 5px;
+  transition: opacity .3s ease-in-out;
+
+  &:hover {
+    opacity: .7;
   }
 }
 
@@ -78,19 +96,110 @@ body {
 
   &--instagram {
     min-width: 20px;
+
     &::before {
       mask-image: url(../img/icon-insta.svg);
       min-width: 20px;
       height: 20px;
     }
+
+    &:hover {
+      &::before {
+        background-color: #ad00ff;
+      }
+    }
   }
 
   &--youtube {
     min-width: 20px;
+
     &::before {
       mask-image: url(../img/icon-yt.svg);
       min-width: 26px;
       height: 26px;
     }
+
+    &:hover {
+      &::before {
+        background-color: #ff0000;
+      }
+    }
+  }
+}
+
+.burger {
+  width: 23px;
+  height: 10px;
+  position: relative;
+  color: $c-black;
+  cursor: pointer;
+  display: none;
+
+  @include r($tablet) {
+    display: flex;
+    order: 1;
+    margin-left: auto;
+    z-index: 999;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: calc(100% - 2px);
+  }
+
+  &--active .burger__line {
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &--active::before {
+    transform: rotate(45deg);
+    top: 50%;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &--active::after {
+    transform: rotate(-45deg);
+    top: 50%;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+}
+
+.lock {
+  overflow: hidden;
+  position: relative;
+  transition: background-color .3s ease-in-out;
+
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, .5);
   }
 }
